@@ -57,7 +57,7 @@ public class PlayerControllerX : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             Rigidbody enemyRigidbody = other.gameObject.GetComponent<Rigidbody>();
-            Vector3 awayFromPlayer = transform.position - other.gameObject.transform.position;
+            Vector3 awayFromPlayer = other.gameObject.transform.position - transform.position;
 
             if (hasPowerup) // if you have a powerup, hit the enemy with powerup force
             {
