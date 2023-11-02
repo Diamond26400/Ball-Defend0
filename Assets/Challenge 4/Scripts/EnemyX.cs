@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class EnemyX : MonoBehaviour
@@ -13,6 +14,7 @@ public class EnemyX : MonoBehaviour
     {
         enemyRb = GetComponent<Rigidbody>();
         playerGoal = GameObject.Find("Player Goal"); // Assign the playerGoal reference
+        speed = Random.Range(50.0f, 300.0f);
     }
 
     private Vector3 GetLookDirection()
