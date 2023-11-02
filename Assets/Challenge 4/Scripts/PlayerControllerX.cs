@@ -15,25 +15,34 @@ public class PlayerControllerX : MonoBehaviour
     private float normalStrength = 10; // how hard to hit enemy without powerup
     private float powerupStrength = 25; // how hard to hit enemy with powerup
 
-    
+    public float turboBoostStrength = 1000.0f; // turboboost strength
     public ParticleSystem SmokeParticle;
-
+    public Transform playerTransform ;
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
         focalPoint = GameObject.Find("Focal Point");
         SmokeParticle = GameObject.Find("Smoke_Particle").GetComponent<ParticleSystem>();
-
+        SmokeParticle.Stop();
     }
 
     void Update()
     {
         // Add force to player in direction of the focal point (and camera)
         float verticalInput = Input.GetAxis("Vertical");
-       
-            playerRb.AddForce(focalPoint.transform.forward * verticalInput * speed * Time.deltaTime);
-          
-       
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            playerRb.AddForce(transform.forward * turboBoostStrength, ForceMode.Impulse);
+
+            SmokeParticle.transform.position = playerTransform.position;
+
+            SmokeParticle.Play();
+        }
+
+        playerRb.AddForce(focalPoint.transform.forward * verticalInput * speed * Time.deltaTime);
+
+
         // Set powerup indicator position to beneath player
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.6f, 0);
 

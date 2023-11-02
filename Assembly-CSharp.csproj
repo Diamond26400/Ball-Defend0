@@ -63,6 +63,7 @@
     <Compile Include="Assets\Challenge 4\Scripts\SpawnManagerX.cs" />
     <Compile Include="Assets\Challenge 4\Scripts\EnemyX.cs" />
     <Compile Include="Assets\Challenge 4\Scripts\RotateCameraX.cs" />
+    <Compile Include="Assets\Challenge 4\Scripts\WaveManager.cs" />
     <Compile Include="Assets\Challenge 4\Scripts\PlayerControllerX.cs" />
   </ItemGroup>
   <ItemGroup>
