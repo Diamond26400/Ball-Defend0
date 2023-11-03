@@ -302,6 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 221162288}
   - component: {fileID: 221162289}
+  - component: {fileID: 221162290}
   m_Layer: 0
   m_Name: Spawn Manager
   m_TagString: Untagged
@@ -341,7 +342,21 @@ MonoBehaviour:
   enemyCount: 0
   waveCount: 1
   player: {fileID: 583048338}
-  waveManager: {fileID: 0}
+  waveManager: {fileID: 1941868705}
+--- !u!114 &221162290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221162286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622dbf14bac98ec49b6547483b4ec181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves: []
+  enemySpeed: 25
 --- !u!1001 &258741155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -595,7 +610,7 @@ MonoBehaviour:
   powerupIndicator: {fileID: 1427939658}
   powerUpDuration: 5
   turboBoostStrength: 25
-  SmokeParticle: {fileID: 0}
+  SmokeParticle: {fileID: 1664732716}
   playerTransform: {fileID: 1346082124}
 --- !u!1 &680832294
 GameObject:
@@ -1793,6 +1808,58 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609695579}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!198 &1664732716 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4392870381175910774, guid: 6562db3a873684fa9b7da3aef8329d82, type: 3}
+  m_PrefabInstance: {fileID: 258741155}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1941868704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1941868706}
+  - component: {fileID: 1941868705}
+  m_Layer: 0
+  m_Name: WaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1941868705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941868704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622dbf14bac98ec49b6547483b4ec181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - {fileID: 1941868705}
+  enemySpeed: 5
+--- !u!4 &1941868706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941868704}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.24520962, y: -1.2823769, z: -3.2166834}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2046577833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,3 +1979,4 @@ SceneRoots:
   - {fileID: 1427939657}
   - {fileID: 221162288}
   - {fileID: 1346082124}
+  - {fileID: 1941868706}
