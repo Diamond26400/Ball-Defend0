@@ -355,7 +355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 622dbf14bac98ec49b6547483b4ec181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves: []
+  waves:
+  - {fileID: 1941868705}
   enemySpeed: 25
 --- !u!1001 &258741155
 PrefabInstance:
