@@ -17,7 +17,7 @@ public class PlayerControllerX : MonoBehaviour
 
     public float turboBoostStrength = 1000.0f; // turboboost strength
     public ParticleSystem SmokeParticle;
-    public Transform playerTransform ;
+    public Transform playerTransform;
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
